@@ -1,0 +1,13 @@
+{
+  "description": "循环 $ref：根级直接自引用，校验无法收敛，必须报 ref-circular 而不是无限递归",
+  "expect": "fail",
+  "expectRule": "ref-circular",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/schemas/circular-ref.json",
+    "title": "循环引用示例",
+    "description": "根级 $ref 指向自身",
+    "$ref": "#"
+  },
+  "example": 1
+}

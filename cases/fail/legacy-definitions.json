@@ -1,0 +1,29 @@
+{
+  "description": "误用 draft-07 的 definitions —— 2020-12 必须用 $defs",
+  "expect": "fail",
+  "expectRule": "legacy-keyword",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/schemas/legacy-definitions.json",
+    "title": "旧关键字示例",
+    "description": "使用了 draft-07 的 definitions",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "姓名"
+      }
+    },
+    "required": ["name"],
+    "additionalProperties": false,
+    "definitions": {
+      "unused": {
+        "type": "string",
+        "description": "遗留定义"
+      }
+    }
+  },
+  "example": {
+    "name": "张三"
+  }
+}

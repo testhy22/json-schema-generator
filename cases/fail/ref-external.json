@@ -1,0 +1,23 @@
+{
+  "description": "跨文件 $ref —— 产出要求自包含，必须显式报 ref-unsupported，不得静默跳过",
+  "expect": "fail",
+  "expectRule": "ref-unsupported",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/schemas/external-ref.json",
+    "title": "外部引用示例",
+    "description": "引用了同目录另一个文件",
+    "type": "object",
+    "properties": {
+      "name": {
+        "$ref": "./common.json#/$defs/name",
+        "description": "姓名，指向外部定义"
+      }
+    },
+    "required": ["name"],
+    "additionalProperties": false
+  },
+  "example": {
+    "name": "张三"
+  }
+}

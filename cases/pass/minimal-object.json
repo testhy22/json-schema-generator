@@ -1,0 +1,23 @@
+{
+  "description": "最小合法对象：字段带 description、声明 additionalProperties、示例通过",
+  "expect": "pass",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/schemas/minimal-object.json",
+    "title": "最小对象",
+    "description": "只含一个字符串字段的对象",
+    "type": "object",
+    "properties": {
+      "userName": {
+        "type": "string",
+        "description": "用户显示名",
+        "minLength": 1
+      }
+    },
+    "required": ["userName"],
+    "additionalProperties": false
+  },
+  "example": {
+    "userName": "张三"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "description": "字段名用 kebab-case —— 本 Skill 规定 camelCase，必须报 field-naming",
+  "expect": "fail",
+  "expectRule": "field-naming",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/schemas/kebab-field.json",
+    "title": "错误命名示例",
+    "description": "字段名误用连字符",
+    "type": "object",
+    "properties": {
+      "user-name": {
+        "type": "string",
+        "description": "用户显示名"
+      }
+    },
+    "required": ["user-name"],
+    "additionalProperties": false
+  },
+  "example": {
+    "user-name": "张三"
+  }
+}
